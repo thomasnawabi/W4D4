@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<header class="site-header">
+  <% if current_user %>
+    <h2 class="username"> Hello, <%= current_user.user_name %> </h2>
+    <h1>Welcome to the 99 Cats Facebook!!!</h1>
+
+    <form action= "/session" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="LOG OUT">
+    </form>
+  <% else %>
+    <h1 class="center">Welcome to the 99 Cats Facebook!!!</h1>  
+  <% end %>
+
+</header>
+<head>
+  <title>NinetyNineCatsDay1</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <% if flash[:errors] %>
+    <%= flash[:errors] %>
+  <% end %>
+<%= yield %>
+
+</body>
+</html>

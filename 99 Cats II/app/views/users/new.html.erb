@@ -1,0 +1,12 @@
+
+<h1 class = "cats-index">New User!</h1>
+
+<form action="<%= users_url %>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Enter Username:</label>
+  <input type="text" name="user[user_name]"><br>
+  <label>Enter Password :</label>
+  <input type="password" name="user[password]">
+  <br>
+  <input type="submit" value="Sign Up">
+</form>

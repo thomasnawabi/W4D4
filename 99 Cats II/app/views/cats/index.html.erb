@@ -1,0 +1,9 @@
+<h1 class = "cats-index">Cats upon cats!</h1>
+
+<ul class= "cats-index">
+  <% @cats.each do |cat| %>
+    <li><a href="<%= cat_url(cat) %>"><%= cat.name %></a></li>
+  <% end %>
+</ul>
+
+<a href="<%= new_cat_url %>" class = "cats-index">Create cat</a>
